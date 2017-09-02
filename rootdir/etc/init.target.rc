@@ -196,6 +196,17 @@ on boot
 
     chmod 660 /sys/class/leds/rgb/rgb_blink
 
+    # KCAL (enabled by default)
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal_hue
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal_min
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal_val
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal_invert_obsolete
+    chown 0666 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    write /sys/devices/platform/kcal_ctrl.0/kcal_enable 1
+
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
